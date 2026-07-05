@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  habit: one
+  title: MyString
+  target_value: 1
+  current_value: 1
+  start_date: 2026-07-05
+  end_date: 2026-07-05
+
+two:
+  habit: two
+  title: MyString
+  target_value: 1
+  current_value: 1
+  start_date: 2026-07-05
+  end_date: 2026-07-05
