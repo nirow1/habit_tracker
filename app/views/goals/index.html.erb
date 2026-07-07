@@ -1,0 +1,8 @@
+<h1>Goals for <%= @habit.name %></h1>
+<%= link_to "New Goal", new_habit_goal_path(@habit) %>
+
+<ul>
+  <% @goals.each do |goal| %>
+    <li><%= link_to goal.title, habit_goal_path(@habit, goal) %></li>
+  <% end %>
+</ul>

@@ -1,2 +1,15 @@
-<h1>Habits#show</h1>
-<p>Find me in app/views/habits/show.html.erb</p>
+<h1><%= @habit.name %></h1>
+<p><%= @habit.description %></p>
+<p>Frequency: <%= @habit.frequency_type %></p>
+<p>Active: <%= @habit.active? %></p>
+
+<%= link_to "Edit", edit_habit_path(@habit) %>
+<%= link_to "Delete", habit_path(@habit), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+
+<h2>Goals</h2>
+<%= link_to "New Goal", new_habit_goal_path(@habit) %>
+<ul>
+  <% @habit.goals.each do |goal| %>
+    <li><%= link_to goal.title, habit_goal_path(@habit, goal) %></li>
+  <% end %>
+</ul>

@@ -1,0 +1,33 @@
+<%= form_with model: @habit, local: true do |form| %>
+  <% if @habit.errors.any? %>
+    <div class="error-messages">
+      <ul>
+        <% @habit.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :frequency_type %>
+    <%= form.select :frequency_type, %w[daily weekly monthly] %>
+  </div>
+
+  <div class="field">
+    <%= form.label :active %>
+    <%= form.check_box :active %>
+  </div>
+
+  <%= form.submit %>
+<% end %>

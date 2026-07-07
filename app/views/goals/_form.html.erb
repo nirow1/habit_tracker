@@ -1,0 +1,38 @@
+<%= form_with model: [@habit, @goal], local: true do |form| %>
+  <% if @goal.errors.any? %>
+    <div class="error-messages">
+      <ul>
+        <% @goal.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :target_value %>
+    <%= form.number_field :target_value %>
+  </div>
+
+  <div class="field">
+    <%= form.label :current_value %>
+    <%= form.number_field :current_value %>
+  </div>
+
+  <div class="field">
+    <%= form.label :start_date %>
+    <%= form.date_field :start_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :end_date %>
+    <%= form.date_field :end_date %>
+  </div>
+
+  <%= form.submit %>
+<% end %>

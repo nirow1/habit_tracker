@@ -7,6 +7,7 @@ class GoalsController < ApplicationController
   end
 
   def show
+    @check_in = CheckIn.new
   end
 
   def new
